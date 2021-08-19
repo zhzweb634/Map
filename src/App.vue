@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-  <Map :provinces="a"></Map>
+  <Map :provinces="a" end="北京"></Map>
   </div>
 </template>
 

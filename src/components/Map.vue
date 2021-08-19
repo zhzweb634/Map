@@ -8,14 +8,15 @@ import City from '@/utils/City'
 import '@/utils/china'
 export default {
   props: {
+    //provinces 数据格式  要求 name：城市地区， value：迁徙人数
     provinces: {
       type: Array,
       default() {
         return {}
       }
     },
-    // 起始点位置
-    start:{
+    // 终点位置位置
+    end:{
       type: String,
       default: '上海'
     }
@@ -40,7 +41,7 @@ export default {
       // 数据信息
       var BJData = this.provinces.filter(item => item.value > 0).map(item => {
         return [{
-          name: this.start
+          name: this.end
         },
           {
             name: item.name,
@@ -199,7 +200,7 @@ ${params.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>报道人数:
 
       const option = {
         // 设置为半透明
-        backgroundColor: 'transparent',
+        backgroundColor: 'rgba(0,0,0,0.71)',
         title: {
           left: 'left',
           textStyle: {
